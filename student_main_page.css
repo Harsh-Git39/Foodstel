@@ -1,0 +1,179 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+#top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #212121; /* Dark Black Header */
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#img {
+    width: 120px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#img:hover {
+    transform: rotate(360deg);
+    filter: brightness(1.1);
+}
+
+.nav-button {
+    background-color: #04AA6D; /* Green Accent Color */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+
+.nav-button:hover {
+    background-color: #03985b;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Store List Container */
+#storeList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ensure proper spacing of grid items */
+    gap: 20px; /* Space between store cards */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    padding: 0 20px; /* Prevent items from sticking to the edges */
+}
+
+/* Store Card Styling */
+.store-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    height: auto; /* Allow dynamic height adjustment */
+}
+
+.store-card:hover {
+    transform: scale(1.02);
+}
+
+.store-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+}
+
+.store-card img:hover {
+    filter: brightness(1.2);
+}
+
+.store-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.store-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+}
+
+.store-card strong {
+    color: #04AA6D; /* Green Accent Color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    #top {
+        padding: 15px;
+    }
+
+    #img {
+        width: 100px;
+    }
+
+    #storeList {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for tablets */
+    }
+
+    .store-card {
+        padding: 15px;
+        height: auto;
+    }
+
+    .store-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    #top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-button {
+        margin-top: 10px;
+    }
+
+    #storeList {
+        grid-template-columns: 1fr; /* Stack items for small screens */
+    }
+
+    .store-card {
+        padding: 12px;
+    }
+
+    .store-card img {
+        height: 160px;
+    }
+}

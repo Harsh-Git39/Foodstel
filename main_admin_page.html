@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Form</title>
+    <link rel="stylesheet" href="admin_main_page.css">
+</head>
+<body>
+    <div id="top">
+        <img src="logonew-removebg-preview.png"  id="top_image" alt="">
+         <button id="b1">about</button>
+         <button id="b1">home</button>
+         
+         
+    </div>
+    <div class="container">
+        <h2>Vendor Menu Form</h2>
+        <form id="vendorForm">
+            <label for="name">Store Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+            
+            <label for="image_url">Image URL:</label>
+            <input type="text" id="image_url" name="image_url" required>
+            
+            <label>Menu Items:</label>
+            <div id="menuList"></div>
+            <button type="button" id="addMenuItem">Add Menu Item</button>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- Load Supabase from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <script src="main_admin_page.js"></script>
+</body>
+</html>
